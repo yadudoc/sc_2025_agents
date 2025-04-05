@@ -41,7 +41,7 @@ import copy
 import numpy as np
 import networkx as nx
 import intel_extension_for_pytorch as ipex
-from decentralized import CNN, Node
+from decentralized import CNN, Node, calculate_model_size
 from parsl_config import PARSL_CONFIGS
 import pickle
 logger = logging.getLogger(__name__)
@@ -68,10 +68,12 @@ class DMLAgent(Behavior):
 
     def __init__(self, node_id: int,
                  neighbors: HandleList[DMLAgent],
+                 tracker: Handle[Tracker],
                  logpath: str,
-                 rounds: int = 2,
+                 rounds: int = 4,
+                 model_size: str = 'medium',
                  epochs_per_round: int = 1) -> None:
-        init_logging(logging.INFO, logfile=f"{logpath}/agent.{node_id}.log", extra=True, force=True)
+
         self.node_id = node_id
         self.neighbors = neighbors
         self.rounds = rounds
@@ -79,7 +81,15 @@ class DMLAgent(Behavior):
         self.inbox = []
         self.state = random.randint(1, 100)
         self.epochs_per_round = epochs_per_round
+        self.logpath = logpath
+        self.tracker = tracker
+        self.model_size = model_size
         logger.info(f"[{self.node_id}] Initalized")
+
+    def on_setup(self):
+        init_logging(logging.INFO, logfile=f"{self.logpath}/agent.{self.node_id}.log", color=False, extra=True)
+        logger.info(f"[{self.node_id}] Setup: Initializing model")
+        self.init_model()
 
     def init_model(self):
         if torch.cuda.is_available():
@@ -99,14 +109,15 @@ class DMLAgent(Behavior):
         loader = DataLoader(dataset, batch_size=64, shuffle=True)
 
         # Initialize global model architecture (each node will get a copy)
-        model = CNN().to(self.device)
+        model = CNN(model_size=self.model_size).to(self.device)
         self.node = Node(
             node_id=self.node_id,
             model=model,
             train_data=loader,
             device=self.device
         )
-        self.model_state_size = sys.getsizeof(pickle.dumps(model.state_dict()))
+        # self.model_state_size = sys.getsizeof(pickle.dumps(model.state_dict()))
+        self.model_state_size = calculate_model_size(model)
         logger.info(f"[{self.node_id}] Initalized model")
 
     def train(self) -> float:
@@ -146,18 +157,21 @@ class DMLAgent(Behavior):
             except Exception:
                 logger.exception("Something broke")
         t = time.perf_counter() - s
-        logger.info(f"[{self.node_id}] pushed state size:{self.model_state_size} to neighbors:{len(self.neighbors)} in {t}s")
+        logger.info(f"[{self.node_id}] pushed state size:{self.model_state_size  / 8e6:.2f} MB to neighbors:{len(self.neighbors)} in {t}s")
         return t
 
     @action
     def receive_state(self, state:int, from_id: int) -> None:
         # logger.info(f"[{self.node_id}] Received state {from_id=}")
-        self.inbox.append(state)
-        return
+        if from_id == "1337":
+            logger.info("Got messsage from tracker, shutting down")
+            self.shutdown()
+        else:
+            self.inbox.append(state)
+            return
 
     @loop
     def training_loop(self, shutdown: threading.Event) -> None:
-        self.init_model()
         logger.info("Starting loop")
         s = time.perf_counter()
 
@@ -176,8 +190,37 @@ class DMLAgent(Behavior):
 
         t = time.perf_counter() - s
         logger.info(f"[{self.node_id}] total_train_t:{t_tot_train} total_push_t:{t_tot_push} total_agg_t:{t_tot_aggregate}")
+
+        # Report to tracker that the agent is done
+        self.tracker.action('report_done', self.node_id).result()
+        self.tracker.action('block_until_done').result()
         logger.info(f"[{self.node_id}] Exiting. Total active time: {t}s")
-        # Sort of crappy way to exit
         shutdown.set()
-        return
+
+
+class Tracker(Behavior):
+
+    def __init__(self, agent_count: int):
+        self.agent_count = agent_count
+        self.done_count = 0
+        self.done_event = threading.Event()
+
+    @action
+    def report_done(self, agent_id: int):
+        logger.info(f"[Tracker] {agent_id} reports done")
+        self.done_count += 1
+
+    @action
+    def block_until_done(self):
+        return self.done_event.wait()
+
+    @loop
+    def wait_for_all(self, shutdown: threading.Event) -> None:
+        while self.done_count != self.agent_count:
+            time.sleep(1)
+        self.done_event.set()
+        time.sleep(1)
+        logger.info("[Tracker] Exiting !!!")
+        shutdown.set()
+
 
