@@ -27,6 +27,14 @@ from aeris.exchange.redis import RedisExchange
 from aeris.launcher.executor import ExecutorLauncher
 from aeris.launcher.thread import ThreadLauncher
 from aeris.logging import init_logging
+from proxystore.connectors.endpoint import EndpointConnector
+from proxystore.store import Store
+from proxystore.store.executor import ProxyAlways
+from proxystore.ex.connectors.dim.zmq import ZeroMQConnector
+
+from aeris.exchange.hybrid import HybridExchange
+from aeris.exchange.proxystore import ProxyStoreExchange
+from aeris.exchange.redis import RedisExchange
 from concurrent.futures import ThreadPoolExecutor
 from parsl.concurrent import ParslPoolExecutor
 
@@ -135,20 +143,19 @@ if __name__ == "__main__":
                         help="redis hostname")
     parser.add_argument('--redis_port', default=6789,
                         help="redis port")
-    parser.add_argument('--rounds', default=4,
+    parser.add_argument('--rounds', default=5,
                         help="Number of rounds to run")
     parser.add_argument('--model_size', default='small',
                         help="Model size: small/medium/large/largex2")
 
     args = parser.parse_args()
 
-    thread_exchange = ThreadExchange()
     thread_launcher = ExecutorLauncher(ThreadPoolExecutor(), close_exchange=False)
 
     print(f"Running in environment:{args.environment}")
 
     if args.environment == 'threads':
-        exchange = thread_exchange
+        exchange = ThreadExchange()
         launcher = thread_launcher
 
     elif args.environment == 'parsl-gpu':
@@ -191,7 +198,7 @@ if __name__ == "__main__":
         run_id = len(os.listdir(args.log_dir))
         logpath = f"agent_logs/{run_id:03}"
     else:
-        os.makedirs(logpath, exist_ok=True)
+        os.makedirs(args.log_dir, exist_ok=True)
         logpath = args.log_dir
 
     adj_dict = get_adj_dict(args.topo_file)
@@ -199,8 +206,9 @@ if __name__ == "__main__":
     agent_count = len(adj_dict)
     print("Agent count: ", agent_count)
 
-    print(f"{exchange} {launcher}")
-    tracker_handle = spawn_tracker(thread_exchange, thread_launcher, agent_count)
+    # Tracker agent must be launched with the thread_launcher so as to run
+    # on the lead node and not on the limited GPU attached worker slots
+    tracker_handle = spawn_tracker(exchange, thread_launcher, agent_count)
 
     agent_handles = spawn_agents(
         adj_dict, exchange, launcher, logpath,

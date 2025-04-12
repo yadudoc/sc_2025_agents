@@ -19,8 +19,8 @@ def calculate_model_size(model: nn.Module) -> float:
     for buffer in model.buffers():
         buffer_size += buffer.nelement() * buffer.element_size()
 
-    size_all_mb = (param_size + buffer_size) / 1024**2
-    return round(size_all_mb, 2)
+    size_mb = (param_size + buffer_size) / 1024**2
+    return size_mb
 
 
 class CNN(nn.Module):
@@ -30,6 +30,9 @@ class CNN(nn.Module):
         self.dropout2 = nn.Dropout(0.5)
         self.model_size = model_size
 
+        # Note: These model size are tweaked to get match previous
+        # model sizes used for experiments and do not match realistic
+        # parameters for real use-cases
         if self.model_size == "small":
             self.conv1 = nn.Conv2d(1, 32, 3, 1)
             self.conv2 = nn.Conv2d(32, 64, 3, 1)
@@ -40,19 +43,19 @@ class CNN(nn.Module):
             self.conv1 = nn.Conv2d(1, 64, 3, 1)
             self.conv2 = nn.Conv2d(64, 64, 3, 1)
             self.fc1 = nn.Linear(9216, 128)
-            self.fc2 = nn.Linear(128, 10)
+            self.fc2 = nn.Linear(128, 320)
 
         elif self.model_size == "large":
-            self.conv1 = nn.Conv2d(1, 32, 3, 1)
-            self.conv2 = nn.Conv2d(32, 64, 3, 1)
-            self.fc1 = nn.Linear(9216, 128)
-            self.fc2 = nn.Linear(128, 10)
+            self.conv1 = nn.Conv2d(1, 128, 3, 1)
+            self.conv2 = nn.Conv2d(128, 64, 3, 1)
+            self.fc1 = nn.Linear(9216, 256)
+            self.fc2 = nn.Linear(256, 464)
 
         elif self.model_size == "largex2":
-            self.conv1 = nn.Conv2d(1, 32, 3, 1)
-            self.conv2 = nn.Conv2d(32, 64, 3, 1)
-            self.fc1 = nn.Linear(9216, 128)
-            self.fc2 = nn.Linear(128, 10)
+            self.conv1 = nn.Conv2d(1, 256, 3, 1)
+            self.conv2 = nn.Conv2d(256, 64, 3, 1)
+            self.fc1 = nn.Linear(9216, 512)
+            self.fc2 = nn.Linear(512, 308)
 
         else:
             raise ValueError(f"Model size: {model_size} is not supported")

@@ -90,7 +90,7 @@ class DMLAgent(Behavior):
 
     def on_setup(self):
         init_logging(logging.INFO, logfile=f"{self.logpath}/agent.{self.node_id}.log", color=False, extra=True)
-        logger.info(f"[{self.node_id}] Setup: Initializing model")
+        logger.info(f"[{self.node_id}] Setup: Initializing model:{self.model_size}")
         self.init_model()
 
     def init_model(self):
@@ -118,9 +118,8 @@ class DMLAgent(Behavior):
             train_data=loader,
             device=self.device
         )
-        # self.model_state_size = sys.getsizeof(pickle.dumps(model.state_dict()))
         self.model_state_size = calculate_model_size(model)
-        logger.info(f"[{self.node_id}] Initalized model")
+        logger.info(f"[{self.node_id}] Initalized model of size {self.model_state_size:.2f} MB")
 
     def train(self) -> float:
         # Local training phase
