@@ -85,6 +85,8 @@ class DMLAgent(Behavior):
         self.tracker = tracker
         self.model_size = model_size
         logger.info(f"[{self.node_id}] Initalized")
+        logger.info(f"[{self.node_id}] {rounds=}")
+        logger.info(f"[{self.node_id}] {model_size=}")
 
     def on_setup(self):
         init_logging(logging.INFO, logfile=f"{self.logpath}/agent.{self.node_id}.log", color=False, extra=True)
@@ -162,13 +164,8 @@ class DMLAgent(Behavior):
 
     @action
     def receive_state(self, state:int, from_id: int) -> None:
-        # logger.info(f"[{self.node_id}] Received state {from_id=}")
-        if from_id == "1337":
-            logger.info("Got messsage from tracker, shutting down")
-            self.shutdown()
-        else:
-            self.inbox.append(state)
-            return
+        self.inbox.append(state)
+        return
 
     @loop
     def training_loop(self, shutdown: threading.Event) -> None:
@@ -193,9 +190,7 @@ class DMLAgent(Behavior):
 
         # Report to tracker that the agent is done
         self.tracker.action('report_done', self.node_id).result()
-        self.tracker.action('block_until_done').result()
         logger.info(f"[{self.node_id}] Exiting. Total active time: {t}s")
-        shutdown.set()
 
 
 class Tracker(Behavior):
