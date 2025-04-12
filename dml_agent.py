@@ -201,9 +201,11 @@ class Tracker(Behavior):
         self.done_event = threading.Event()
 
     @action
-    def report_done(self, agent_id: int):
+    def report_done(self, agent_id: int) -> int:
         logger.info(f"[Tracker] {agent_id} reports done")
         self.done_count += 1
+        return self.done_count
+        
 
     @action
     def block_until_done(self):

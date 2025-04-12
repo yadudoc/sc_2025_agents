@@ -76,7 +76,6 @@ def spawn_tracker(exchange, launcher, agent_count):
     )
     return node_handle
 
-
 def spawn_agents(adj_dict: dict[list], exchange, launcher, logpath,
                  tracker_handle: Handle[Tracker]=None,
                  rounds:int=4,
@@ -120,9 +119,6 @@ def spawn_agents(adj_dict: dict[list], exchange, launcher, logpath,
 
     logger.info("Finished launching agents")
 
-    wait_on_tracker_future = tracker_handle.action('block_until_done')
-    logger.info("YADU: {wait_on_tracker_future}")
-    logger.info("YADU: {wait_on_tracker_future.result()}")
     return [nodes[node]['node_handle'] for node in nodes]
 
 
@@ -139,7 +135,7 @@ if __name__ == "__main__":
                         help="redis hostname")
     parser.add_argument('--redis_port', default=6789,
                         help="redis port")
-    parser.add_argument('--rounds', default=1,
+    parser.add_argument('--rounds', default=4,
                         help="Number of rounds to run")
     parser.add_argument('--model_size', default='small',
                         help="Model size: small/medium/large/largex2")
@@ -147,7 +143,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     thread_exchange = ThreadExchange()
-    thread_launcher = ExecutorLauncher(ThreadPoolExecutor())
+    thread_launcher = ExecutorLauncher(ThreadPoolExecutor(), close_exchange=False)
 
     print(f"Running in environment:{args.environment}")
 
@@ -205,6 +201,7 @@ if __name__ == "__main__":
 
     print(f"{exchange} {launcher}")
     tracker_handle = spawn_tracker(thread_exchange, thread_launcher, agent_count)
+
     agent_handles = spawn_agents(
         adj_dict, exchange, launcher, logpath,
         tracker_handle=tracker_handle,
@@ -212,11 +209,12 @@ if __name__ == "__main__":
         rounds=int(args.rounds),
     )
 
-    print("Here")
-    print(f"{tracker_handle}")
-    thread_exchange.wait(tracker_handle.agent_id)
-    logger.info("Tracker exited. Shutting down agents")
-    #for agent_handle in agent_handle:
-    #   agent_handle.shutdown()
-    logger.info("All agents finished")
-    time.sleep(10)
+    thread_launcher.wait(tracker_handle.agent_id)
+
+
+    for agent_handle in agent_handles:
+        agent_client = agent_handle.bind_as_client()
+        agent_client.shutdown()
+        agent_client.close()
+
+    print("Exiting!!!")
