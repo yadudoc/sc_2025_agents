@@ -1,0 +1,22 @@
+[2025-04-12 21:22:07.361] [tid=190318 pid=190318] INFO     (root) Configured logger (level=INFO, file=/home/yadunand/sc_2025_agents/experiment_3/powerlaw.1536.small/agent.808.log)
+[2025-04-12 21:22:07.362] [tid=190318 pid=190318] INFO     (dml_agent) [808] Setup: Initializing model:small
+[2025-04-12 21:22:07.477] [tid=190318 pid=190318] INFO     (dml_agent) [808] Initalized model of size 1.20 MB
+[2025-04-12 21:22:07.478] [tid=192009 pid=190318] INFO     (dml_agent) Starting loop
+[2025-04-12 21:22:07.478] [tid=192009 pid=190318] INFO     (dml_agent) [808] Round:0
+[2025-04-12 21:22:07.478] [tid=190318 pid=190318] INFO     (aeris.agent) Running agent (AgentID<e7e47a86>; Behavior<DMLAgent>)
+[2025-04-12 21:22:13.783] [tid=192009 pid=190318] INFO     (dml_agent) [808] Completed training for epochs:1 in 6.30477026902372s
+[2025-04-12 21:22:13.796] [tid=192009 pid=190318] INFO     (dml_agent) [808] pushed state size:0.00 MB to neighbors:2 in 0.01189776899991557s
+[2025-04-12 21:22:13.824] [tid=192009 pid=190318] INFO     (dml_agent) [808] Round:1
+[2025-04-12 21:22:19.003] [tid=192009 pid=190318] INFO     (dml_agent) [808] Completed training for epochs:1 in 5.179343783995137s
+[2025-04-12 21:22:19.015] [tid=192009 pid=190318] INFO     (dml_agent) [808] pushed state size:0.00 MB to neighbors:2 in 0.011981637973804027s
+[2025-04-12 21:22:19.017] [tid=192009 pid=190318] INFO     (dml_agent) [808] Round:2
+[2025-04-12 21:22:24.487] [tid=192009 pid=190318] INFO     (dml_agent) [808] Completed training for epochs:1 in 5.470643022970762s
+[2025-04-12 21:22:24.499] [tid=192009 pid=190318] INFO     (dml_agent) [808] pushed state size:0.00 MB to neighbors:2 in 0.011254874989390373s
+[2025-04-12 21:22:24.500] [tid=192009 pid=190318] INFO     (dml_agent) [808] Round:3
+[2025-04-12 21:22:30.004] [tid=192009 pid=190318] INFO     (dml_agent) [808] Completed training for epochs:1 in 5.503242148028221s
+[2025-04-12 21:22:30.017] [tid=192009 pid=190318] INFO     (dml_agent) [808] pushed state size:0.00 MB to neighbors:2 in 0.012859942973591387s
+[2025-04-12 21:22:30.018] [tid=192009 pid=190318] INFO     (dml_agent) [808] total_train_t:22.45799922401784 total_push_t:0.04799422493670136 total_agg_t:0.03134716599015519
+[2025-04-12 21:22:30.023] [tid=192009 pid=190318] INFO     (dml_agent) [808] Exiting. Total active time: 22.539935412001796s
+[2025-04-12 21:22:43.475] [tid=190318 pid=190318] INFO     (aeris.agent) Shutdown agent (AgentID<e7e47a86>; Behavior<DMLAgent>)
+[2025-04-12 21:22:43.475] [tid=190318 pid=190318] INFO     (worker_log) Completed executor task 809
+[2025-04-12 21:22:43.478] [tid=190318 pid=190318] INFO     (worker_log) All processing finished for executor task 809

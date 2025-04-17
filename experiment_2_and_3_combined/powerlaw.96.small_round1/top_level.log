@@ -1,0 +1,486 @@
+[2025-04-11 03:05:01.508] INFO     (root) Configured logger (level=INFO, file=/home/yadunand/sc_2025_agents/experiment_2/powerlaw.96.small/top_level.log)
+[2025-04-11 03:05:01.512] INFO     (aeris.agent) Running agent (AgentID<d8126f54>; Behavior<Tracker>)
+[2025-04-11 03:05:01.517] INFO     (__main__) Launching 96 nodes
+[2025-04-11 03:05:01.517] INFO     (dml_agent) [0] Initalized
+[2025-04-11 03:05:01.518] INFO     (parsl.dataflow.dflow) Task 0 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.520] INFO     (dml_agent) [1] Initalized
+[2025-04-11 03:05:01.520] INFO     (parsl.dataflow.dflow) Parsl task 0 try 0 launched on executor HighThroughputExecutor with executor id 1
+[2025-04-11 03:05:01.520] INFO     (parsl.dataflow.dflow) Task 1 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.520] INFO     (parsl.dataflow.dflow) Standard out for task 0 will not be redirected.
+[2025-04-11 03:05:01.520] INFO     (dml_agent) [2] Initalized
+[2025-04-11 03:05:01.520] INFO     (parsl.dataflow.dflow) Standard error for task 0 will not be redirected.
+[2025-04-11 03:05:01.520] INFO     (parsl.dataflow.dflow) Task 2 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.521] INFO     (dml_agent) [3] Initalized
+[2025-04-11 03:05:01.521] INFO     (parsl.dataflow.dflow) Parsl task 1 try 0 launched on executor HighThroughputExecutor with executor id 2
+[2025-04-11 03:05:01.521] INFO     (parsl.dataflow.dflow) Task 3 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.521] INFO     (parsl.dataflow.dflow) Standard out for task 1 will not be redirected.
+[2025-04-11 03:05:01.521] INFO     (dml_agent) [4] Initalized
+[2025-04-11 03:05:01.521] INFO     (parsl.dataflow.dflow) Standard error for task 1 will not be redirected.
+[2025-04-11 03:05:01.521] INFO     (parsl.dataflow.dflow) Task 4 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.521] INFO     (dml_agent) [5] Initalized
+[2025-04-11 03:05:01.521] INFO     (parsl.dataflow.dflow) Parsl task 2 try 0 launched on executor HighThroughputExecutor with executor id 3
+[2025-04-11 03:05:01.521] INFO     (parsl.dataflow.dflow) Task 5 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.522] INFO     (parsl.dataflow.dflow) Standard out for task 2 will not be redirected.
+[2025-04-11 03:05:01.522] INFO     (dml_agent) [6] Initalized
+[2025-04-11 03:05:01.522] INFO     (parsl.dataflow.dflow) Standard error for task 2 will not be redirected.
+[2025-04-11 03:05:01.522] INFO     (parsl.dataflow.dflow) Task 6 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.522] INFO     (dml_agent) [7] Initalized
+[2025-04-11 03:05:01.522] INFO     (parsl.dataflow.dflow) Parsl task 3 try 0 launched on executor HighThroughputExecutor with executor id 4
+[2025-04-11 03:05:01.522] INFO     (parsl.dataflow.dflow) Task 7 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.522] INFO     (parsl.dataflow.dflow) Standard out for task 3 will not be redirected.
+[2025-04-11 03:05:01.522] INFO     (dml_agent) [8] Initalized
+[2025-04-11 03:05:01.522] INFO     (parsl.dataflow.dflow) Standard error for task 3 will not be redirected.
+[2025-04-11 03:05:01.523] INFO     (parsl.dataflow.dflow) Task 8 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.523] INFO     (parsl.dataflow.dflow) Parsl task 4 try 0 launched on executor HighThroughputExecutor with executor id 5
+[2025-04-11 03:05:01.523] INFO     (dml_agent) [9] Initalized
+[2025-04-11 03:05:01.523] INFO     (parsl.dataflow.dflow) Standard out for task 4 will not be redirected.
+[2025-04-11 03:05:01.523] INFO     (parsl.dataflow.dflow) Task 9 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.523] INFO     (parsl.dataflow.dflow) Standard error for task 4 will not be redirected.
+[2025-04-11 03:05:01.523] INFO     (dml_agent) [10] Initalized
+[2025-04-11 03:05:01.523] INFO     (parsl.dataflow.dflow) Parsl task 5 try 0 launched on executor HighThroughputExecutor with executor id 6
+[2025-04-11 03:05:01.524] INFO     (parsl.dataflow.dflow) Task 10 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.524] INFO     (parsl.dataflow.dflow) Standard out for task 5 will not be redirected.
+[2025-04-11 03:05:01.524] INFO     (dml_agent) [11] Initalized
+[2025-04-11 03:05:01.524] INFO     (parsl.dataflow.dflow) Standard error for task 5 will not be redirected.
+[2025-04-11 03:05:01.524] INFO     (parsl.dataflow.dflow) Task 11 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.524] INFO     (parsl.dataflow.dflow) Parsl task 6 try 0 launched on executor HighThroughputExecutor with executor id 7
+[2025-04-11 03:05:01.524] INFO     (dml_agent) [12] Initalized
+[2025-04-11 03:05:01.524] INFO     (parsl.dataflow.dflow) Standard out for task 6 will not be redirected.
+[2025-04-11 03:05:01.524] INFO     (parsl.dataflow.dflow) Task 12 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.524] INFO     (parsl.dataflow.dflow) Standard error for task 6 will not be redirected.
+[2025-04-11 03:05:01.524] INFO     (dml_agent) [13] Initalized
+[2025-04-11 03:05:01.525] INFO     (parsl.dataflow.dflow) Parsl task 7 try 0 launched on executor HighThroughputExecutor with executor id 8
+[2025-04-11 03:05:01.525] INFO     (parsl.dataflow.dflow) Task 13 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.525] INFO     (parsl.dataflow.dflow) Standard out for task 7 will not be redirected.
+[2025-04-11 03:05:01.525] INFO     (dml_agent) [14] Initalized
+[2025-04-11 03:05:01.525] INFO     (parsl.dataflow.dflow) Standard error for task 7 will not be redirected.
+[2025-04-11 03:05:01.525] INFO     (parsl.dataflow.dflow) Task 14 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.525] INFO     (parsl.dataflow.dflow) Parsl task 8 try 0 launched on executor HighThroughputExecutor with executor id 9
+[2025-04-11 03:05:01.525] INFO     (dml_agent) [15] Initalized
+[2025-04-11 03:05:01.525] INFO     (parsl.dataflow.dflow) Standard out for task 8 will not be redirected.
+[2025-04-11 03:05:01.526] INFO     (parsl.dataflow.dflow) Task 15 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.526] INFO     (parsl.dataflow.dflow) Standard error for task 8 will not be redirected.
+[2025-04-11 03:05:01.526] INFO     (dml_agent) [16] Initalized
+[2025-04-11 03:05:01.526] INFO     (parsl.dataflow.dflow) Parsl task 9 try 0 launched on executor HighThroughputExecutor with executor id 10
+[2025-04-11 03:05:01.526] INFO     (parsl.dataflow.dflow) Task 16 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.526] INFO     (parsl.dataflow.dflow) Standard out for task 9 will not be redirected.
+[2025-04-11 03:05:01.526] INFO     (dml_agent) [17] Initalized
+[2025-04-11 03:05:01.526] INFO     (parsl.dataflow.dflow) Standard error for task 9 will not be redirected.
+[2025-04-11 03:05:01.526] INFO     (parsl.dataflow.dflow) Task 17 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.527] INFO     (parsl.dataflow.dflow) Parsl task 10 try 0 launched on executor HighThroughputExecutor with executor id 11
+[2025-04-11 03:05:01.527] INFO     (dml_agent) [18] Initalized
+[2025-04-11 03:05:01.527] INFO     (parsl.dataflow.dflow) Standard out for task 10 will not be redirected.
+[2025-04-11 03:05:01.527] INFO     (parsl.dataflow.dflow) Task 18 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.527] INFO     (parsl.dataflow.dflow) Standard error for task 10 will not be redirected.
+[2025-04-11 03:05:01.527] INFO     (dml_agent) [19] Initalized
+[2025-04-11 03:05:01.527] INFO     (parsl.dataflow.dflow) Parsl task 11 try 0 launched on executor HighThroughputExecutor with executor id 12
+[2025-04-11 03:05:01.528] INFO     (parsl.dataflow.dflow) Task 19 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.528] INFO     (parsl.dataflow.dflow) Standard out for task 11 will not be redirected.
+[2025-04-11 03:05:01.528] INFO     (dml_agent) [20] Initalized
+[2025-04-11 03:05:01.528] INFO     (parsl.dataflow.dflow) Standard error for task 11 will not be redirected.
+[2025-04-11 03:05:01.528] INFO     (parsl.dataflow.dflow) Task 20 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.528] INFO     (parsl.dataflow.dflow) Parsl task 12 try 0 launched on executor HighThroughputExecutor with executor id 13
+[2025-04-11 03:05:01.528] INFO     (dml_agent) [21] Initalized
+[2025-04-11 03:05:01.528] INFO     (parsl.dataflow.dflow) Standard out for task 12 will not be redirected.
+[2025-04-11 03:05:01.528] INFO     (parsl.dataflow.dflow) Task 21 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.528] INFO     (parsl.dataflow.dflow) Standard error for task 12 will not be redirected.
+[2025-04-11 03:05:01.529] INFO     (dml_agent) [22] Initalized
+[2025-04-11 03:05:01.529] INFO     (parsl.dataflow.dflow) Parsl task 13 try 0 launched on executor HighThroughputExecutor with executor id 14
+[2025-04-11 03:05:01.529] INFO     (parsl.dataflow.dflow) Task 22 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.529] INFO     (parsl.dataflow.dflow) Standard out for task 13 will not be redirected.
+[2025-04-11 03:05:01.529] INFO     (dml_agent) [23] Initalized
+[2025-04-11 03:05:01.529] INFO     (parsl.dataflow.dflow) Standard error for task 13 will not be redirected.
+[2025-04-11 03:05:01.529] INFO     (parsl.dataflow.dflow) Task 23 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.529] INFO     (parsl.dataflow.dflow) Parsl task 14 try 0 launched on executor HighThroughputExecutor with executor id 15
+[2025-04-11 03:05:01.529] INFO     (dml_agent) [24] Initalized
+[2025-04-11 03:05:01.530] INFO     (parsl.dataflow.dflow) Standard out for task 14 will not be redirected.
+[2025-04-11 03:05:01.530] INFO     (parsl.dataflow.dflow) Task 24 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.530] INFO     (parsl.dataflow.dflow) Standard error for task 14 will not be redirected.
+[2025-04-11 03:05:01.530] INFO     (dml_agent) [25] Initalized
+[2025-04-11 03:05:01.530] INFO     (parsl.dataflow.dflow) Parsl task 15 try 0 launched on executor HighThroughputExecutor with executor id 16
+[2025-04-11 03:05:01.530] INFO     (parsl.dataflow.dflow) Task 25 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.530] INFO     (parsl.dataflow.dflow) Standard out for task 15 will not be redirected.
+[2025-04-11 03:05:01.530] INFO     (dml_agent) [26] Initalized
+[2025-04-11 03:05:01.530] INFO     (parsl.dataflow.dflow) Standard error for task 15 will not be redirected.
+[2025-04-11 03:05:01.530] INFO     (parsl.dataflow.dflow) Task 26 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.531] INFO     (parsl.dataflow.dflow) Parsl task 16 try 0 launched on executor HighThroughputExecutor with executor id 17
+[2025-04-11 03:05:01.531] INFO     (dml_agent) [27] Initalized
+[2025-04-11 03:05:01.531] INFO     (parsl.dataflow.dflow) Standard out for task 16 will not be redirected.
+[2025-04-11 03:05:01.531] INFO     (parsl.dataflow.dflow) Task 27 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.531] INFO     (parsl.dataflow.dflow) Standard error for task 16 will not be redirected.
+[2025-04-11 03:05:01.531] INFO     (dml_agent) [28] Initalized
+[2025-04-11 03:05:01.531] INFO     (parsl.dataflow.dflow) Parsl task 17 try 0 launched on executor HighThroughputExecutor with executor id 18
+[2025-04-11 03:05:01.531] INFO     (parsl.dataflow.dflow) Task 28 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.531] INFO     (parsl.dataflow.dflow) Standard out for task 17 will not be redirected.
+[2025-04-11 03:05:01.531] INFO     (dml_agent) [29] Initalized
+[2025-04-11 03:05:01.532] INFO     (parsl.dataflow.dflow) Standard error for task 17 will not be redirected.
+[2025-04-11 03:05:01.532] INFO     (parsl.dataflow.dflow) Task 29 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.532] INFO     (parsl.dataflow.dflow) Parsl task 18 try 0 launched on executor HighThroughputExecutor with executor id 19
+[2025-04-11 03:05:01.532] INFO     (dml_agent) [30] Initalized
+[2025-04-11 03:05:01.532] INFO     (parsl.dataflow.dflow) Standard out for task 18 will not be redirected.
+[2025-04-11 03:05:01.532] INFO     (parsl.dataflow.dflow) Task 30 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.532] INFO     (parsl.dataflow.dflow) Standard error for task 18 will not be redirected.
+[2025-04-11 03:05:01.532] INFO     (dml_agent) [31] Initalized
+[2025-04-11 03:05:01.532] INFO     (parsl.dataflow.dflow) Parsl task 19 try 0 launched on executor HighThroughputExecutor with executor id 20
+[2025-04-11 03:05:01.533] INFO     (parsl.dataflow.dflow) Task 31 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.533] INFO     (parsl.dataflow.dflow) Standard out for task 19 will not be redirected.
+[2025-04-11 03:05:01.533] INFO     (dml_agent) [32] Initalized
+[2025-04-11 03:05:01.533] INFO     (parsl.dataflow.dflow) Standard error for task 19 will not be redirected.
+[2025-04-11 03:05:01.533] INFO     (parsl.dataflow.dflow) Task 32 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.533] INFO     (parsl.dataflow.dflow) Parsl task 20 try 0 launched on executor HighThroughputExecutor with executor id 21
+[2025-04-11 03:05:01.533] INFO     (dml_agent) [33] Initalized
+[2025-04-11 03:05:01.533] INFO     (parsl.dataflow.dflow) Standard out for task 20 will not be redirected.
+[2025-04-11 03:05:01.533] INFO     (parsl.dataflow.dflow) Task 33 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.533] INFO     (parsl.dataflow.dflow) Standard error for task 20 will not be redirected.
+[2025-04-11 03:05:01.533] INFO     (dml_agent) [34] Initalized
+[2025-04-11 03:05:01.534] INFO     (parsl.dataflow.dflow) Parsl task 21 try 0 launched on executor HighThroughputExecutor with executor id 22
+[2025-04-11 03:05:01.534] INFO     (parsl.dataflow.dflow) Task 34 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.534] INFO     (parsl.dataflow.dflow) Standard out for task 21 will not be redirected.
+[2025-04-11 03:05:01.534] INFO     (dml_agent) [35] Initalized
+[2025-04-11 03:05:01.534] INFO     (parsl.dataflow.dflow) Standard error for task 21 will not be redirected.
+[2025-04-11 03:05:01.534] INFO     (parsl.dataflow.dflow) Task 35 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.534] INFO     (parsl.dataflow.dflow) Parsl task 22 try 0 launched on executor HighThroughputExecutor with executor id 23
+[2025-04-11 03:05:01.534] INFO     (dml_agent) [36] Initalized
+[2025-04-11 03:05:01.534] INFO     (parsl.dataflow.dflow) Standard out for task 22 will not be redirected.
+[2025-04-11 03:05:01.534] INFO     (parsl.dataflow.dflow) Task 36 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.535] INFO     (parsl.dataflow.dflow) Standard error for task 22 will not be redirected.
+[2025-04-11 03:05:01.535] INFO     (dml_agent) [37] Initalized
+[2025-04-11 03:05:01.535] INFO     (parsl.dataflow.dflow) Parsl task 23 try 0 launched on executor HighThroughputExecutor with executor id 24
+[2025-04-11 03:05:01.535] INFO     (parsl.dataflow.dflow) Task 37 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.535] INFO     (parsl.dataflow.dflow) Standard out for task 23 will not be redirected.
+[2025-04-11 03:05:01.535] INFO     (dml_agent) [38] Initalized
+[2025-04-11 03:05:01.535] INFO     (parsl.dataflow.dflow) Standard error for task 23 will not be redirected.
+[2025-04-11 03:05:01.535] INFO     (parsl.dataflow.dflow) Task 38 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.535] INFO     (parsl.dataflow.dflow) Parsl task 24 try 0 launched on executor HighThroughputExecutor with executor id 25
+[2025-04-11 03:05:01.536] INFO     (dml_agent) [39] Initalized
+[2025-04-11 03:05:01.536] INFO     (parsl.dataflow.dflow) Standard out for task 24 will not be redirected.
+[2025-04-11 03:05:01.536] INFO     (parsl.dataflow.dflow) Task 39 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.536] INFO     (parsl.dataflow.dflow) Standard error for task 24 will not be redirected.
+[2025-04-11 03:05:01.536] INFO     (dml_agent) [40] Initalized
+[2025-04-11 03:05:01.536] INFO     (parsl.dataflow.dflow) Parsl task 25 try 0 launched on executor HighThroughputExecutor with executor id 26
+[2025-04-11 03:05:01.536] INFO     (parsl.dataflow.dflow) Task 40 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.536] INFO     (parsl.dataflow.dflow) Standard out for task 25 will not be redirected.
+[2025-04-11 03:05:01.536] INFO     (dml_agent) [41] Initalized
+[2025-04-11 03:05:01.536] INFO     (parsl.dataflow.dflow) Standard error for task 25 will not be redirected.
+[2025-04-11 03:05:01.536] INFO     (parsl.dataflow.dflow) Task 41 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.537] INFO     (parsl.dataflow.dflow) Parsl task 26 try 0 launched on executor HighThroughputExecutor with executor id 27
+[2025-04-11 03:05:01.537] INFO     (dml_agent) [42] Initalized
+[2025-04-11 03:05:01.537] INFO     (parsl.dataflow.dflow) Standard out for task 26 will not be redirected.
+[2025-04-11 03:05:01.537] INFO     (parsl.dataflow.dflow) Task 42 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.537] INFO     (parsl.dataflow.dflow) Standard error for task 26 will not be redirected.
+[2025-04-11 03:05:01.537] INFO     (dml_agent) [43] Initalized
+[2025-04-11 03:05:01.537] INFO     (parsl.dataflow.dflow) Parsl task 27 try 0 launched on executor HighThroughputExecutor with executor id 28
+[2025-04-11 03:05:01.537] INFO     (parsl.dataflow.dflow) Task 43 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.537] INFO     (parsl.dataflow.dflow) Standard out for task 27 will not be redirected.
+[2025-04-11 03:05:01.537] INFO     (dml_agent) [44] Initalized
+[2025-04-11 03:05:01.538] INFO     (parsl.dataflow.dflow) Standard error for task 27 will not be redirected.
+[2025-04-11 03:05:01.538] INFO     (parsl.dataflow.dflow) Task 44 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.538] INFO     (parsl.dataflow.dflow) Parsl task 28 try 0 launched on executor HighThroughputExecutor with executor id 29
+[2025-04-11 03:05:01.538] INFO     (dml_agent) [45] Initalized
+[2025-04-11 03:05:01.538] INFO     (parsl.dataflow.dflow) Standard out for task 28 will not be redirected.
+[2025-04-11 03:05:01.538] INFO     (parsl.dataflow.dflow) Task 45 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.538] INFO     (parsl.dataflow.dflow) Standard error for task 28 will not be redirected.
+[2025-04-11 03:05:01.538] INFO     (dml_agent) [46] Initalized
+[2025-04-11 03:05:01.538] INFO     (parsl.dataflow.dflow) Parsl task 29 try 0 launched on executor HighThroughputExecutor with executor id 30
+[2025-04-11 03:05:01.539] INFO     (parsl.dataflow.dflow) Task 46 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.539] INFO     (parsl.dataflow.dflow) Standard out for task 29 will not be redirected.
+[2025-04-11 03:05:01.539] INFO     (dml_agent) [47] Initalized
+[2025-04-11 03:05:01.539] INFO     (parsl.dataflow.dflow) Standard error for task 29 will not be redirected.
+[2025-04-11 03:05:01.539] INFO     (parsl.dataflow.dflow) Task 47 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.539] INFO     (parsl.dataflow.dflow) Parsl task 30 try 0 launched on executor HighThroughputExecutor with executor id 31
+[2025-04-11 03:05:01.539] INFO     (dml_agent) [48] Initalized
+[2025-04-11 03:05:01.539] INFO     (parsl.dataflow.dflow) Standard out for task 30 will not be redirected.
+[2025-04-11 03:05:01.539] INFO     (parsl.dataflow.dflow) Task 48 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.539] INFO     (parsl.dataflow.dflow) Standard error for task 30 will not be redirected.
+[2025-04-11 03:05:01.539] INFO     (dml_agent) [49] Initalized
+[2025-04-11 03:05:01.540] INFO     (parsl.dataflow.dflow) Parsl task 31 try 0 launched on executor HighThroughputExecutor with executor id 32
+[2025-04-11 03:05:01.540] INFO     (parsl.dataflow.dflow) Task 49 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.540] INFO     (parsl.dataflow.dflow) Standard out for task 31 will not be redirected.
+[2025-04-11 03:05:01.540] INFO     (dml_agent) [50] Initalized
+[2025-04-11 03:05:01.540] INFO     (parsl.dataflow.dflow) Standard error for task 31 will not be redirected.
+[2025-04-11 03:05:01.540] INFO     (parsl.dataflow.dflow) Task 50 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.540] INFO     (parsl.dataflow.dflow) Parsl task 32 try 0 launched on executor HighThroughputExecutor with executor id 33
+[2025-04-11 03:05:01.540] INFO     (dml_agent) [51] Initalized
+[2025-04-11 03:05:01.540] INFO     (parsl.dataflow.dflow) Standard out for task 32 will not be redirected.
+[2025-04-11 03:05:01.540] INFO     (parsl.dataflow.dflow) Task 51 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.541] INFO     (parsl.dataflow.dflow) Standard error for task 32 will not be redirected.
+[2025-04-11 03:05:01.541] INFO     (dml_agent) [52] Initalized
+[2025-04-11 03:05:01.541] INFO     (parsl.dataflow.dflow) Parsl task 33 try 0 launched on executor HighThroughputExecutor with executor id 34
+[2025-04-11 03:05:01.541] INFO     (parsl.dataflow.dflow) Task 52 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.541] INFO     (parsl.dataflow.dflow) Standard out for task 33 will not be redirected.
+[2025-04-11 03:05:01.541] INFO     (dml_agent) [53] Initalized
+[2025-04-11 03:05:01.541] INFO     (parsl.dataflow.dflow) Standard error for task 33 will not be redirected.
+[2025-04-11 03:05:01.541] INFO     (parsl.dataflow.dflow) Task 53 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.541] INFO     (parsl.dataflow.dflow) Parsl task 34 try 0 launched on executor HighThroughputExecutor with executor id 35
+[2025-04-11 03:05:01.541] INFO     (dml_agent) [54] Initalized
+[2025-04-11 03:05:01.542] INFO     (parsl.dataflow.dflow) Standard out for task 34 will not be redirected.
+[2025-04-11 03:05:01.542] INFO     (parsl.dataflow.dflow) Task 54 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.542] INFO     (parsl.dataflow.dflow) Standard error for task 34 will not be redirected.
+[2025-04-11 03:05:01.542] INFO     (dml_agent) [55] Initalized
+[2025-04-11 03:05:01.542] INFO     (parsl.dataflow.dflow) Parsl task 35 try 0 launched on executor HighThroughputExecutor with executor id 36
+[2025-04-11 03:05:01.542] INFO     (parsl.dataflow.dflow) Task 55 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.542] INFO     (parsl.dataflow.dflow) Standard out for task 35 will not be redirected.
+[2025-04-11 03:05:01.542] INFO     (dml_agent) [56] Initalized
+[2025-04-11 03:05:01.542] INFO     (parsl.dataflow.dflow) Standard error for task 35 will not be redirected.
+[2025-04-11 03:05:01.542] INFO     (parsl.dataflow.dflow) Task 56 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.543] INFO     (parsl.dataflow.dflow) Parsl task 36 try 0 launched on executor HighThroughputExecutor with executor id 37
+[2025-04-11 03:05:01.543] INFO     (dml_agent) [57] Initalized
+[2025-04-11 03:05:01.543] INFO     (parsl.dataflow.dflow) Standard out for task 36 will not be redirected.
+[2025-04-11 03:05:01.543] INFO     (parsl.dataflow.dflow) Task 57 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.543] INFO     (parsl.dataflow.dflow) Standard error for task 36 will not be redirected.
+[2025-04-11 03:05:01.543] INFO     (dml_agent) [58] Initalized
+[2025-04-11 03:05:01.543] INFO     (parsl.dataflow.dflow) Parsl task 37 try 0 launched on executor HighThroughputExecutor with executor id 38
+[2025-04-11 03:05:01.543] INFO     (parsl.dataflow.dflow) Task 58 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.543] INFO     (parsl.dataflow.dflow) Standard out for task 37 will not be redirected.
+[2025-04-11 03:05:01.543] INFO     (dml_agent) [59] Initalized
+[2025-04-11 03:05:01.544] INFO     (parsl.dataflow.dflow) Standard error for task 37 will not be redirected.
+[2025-04-11 03:05:01.544] INFO     (parsl.dataflow.dflow) Task 59 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.544] INFO     (parsl.dataflow.dflow) Parsl task 38 try 0 launched on executor HighThroughputExecutor with executor id 39
+[2025-04-11 03:05:01.544] INFO     (dml_agent) [60] Initalized
+[2025-04-11 03:05:01.544] INFO     (parsl.dataflow.dflow) Standard out for task 38 will not be redirected.
+[2025-04-11 03:05:01.544] INFO     (parsl.dataflow.dflow) Task 60 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.544] INFO     (parsl.dataflow.dflow) Standard error for task 38 will not be redirected.
+[2025-04-11 03:05:01.544] INFO     (dml_agent) [61] Initalized
+[2025-04-11 03:05:01.544] INFO     (parsl.dataflow.dflow) Parsl task 39 try 0 launched on executor HighThroughputExecutor with executor id 40
+[2025-04-11 03:05:01.545] INFO     (parsl.dataflow.dflow) Task 61 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.545] INFO     (parsl.dataflow.dflow) Standard out for task 39 will not be redirected.
+[2025-04-11 03:05:01.545] INFO     (dml_agent) [62] Initalized
+[2025-04-11 03:05:01.545] INFO     (parsl.dataflow.dflow) Standard error for task 39 will not be redirected.
+[2025-04-11 03:05:01.545] INFO     (parsl.dataflow.dflow) Task 62 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.545] INFO     (parsl.dataflow.dflow) Parsl task 40 try 0 launched on executor HighThroughputExecutor with executor id 41
+[2025-04-11 03:05:01.545] INFO     (dml_agent) [63] Initalized
+[2025-04-11 03:05:01.545] INFO     (parsl.dataflow.dflow) Standard out for task 40 will not be redirected.
+[2025-04-11 03:05:01.545] INFO     (parsl.dataflow.dflow) Task 63 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.545] INFO     (parsl.dataflow.dflow) Standard error for task 40 will not be redirected.
+[2025-04-11 03:05:01.545] INFO     (dml_agent) [64] Initalized
+[2025-04-11 03:05:01.546] INFO     (parsl.dataflow.dflow) Parsl task 41 try 0 launched on executor HighThroughputExecutor with executor id 42
+[2025-04-11 03:05:01.546] INFO     (parsl.dataflow.dflow) Task 64 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.546] INFO     (parsl.dataflow.dflow) Standard out for task 41 will not be redirected.
+[2025-04-11 03:05:01.546] INFO     (dml_agent) [65] Initalized
+[2025-04-11 03:05:01.546] INFO     (parsl.dataflow.dflow) Standard error for task 41 will not be redirected.
+[2025-04-11 03:05:01.546] INFO     (parsl.dataflow.dflow) Task 65 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.546] INFO     (parsl.dataflow.dflow) Parsl task 42 try 0 launched on executor HighThroughputExecutor with executor id 43
+[2025-04-11 03:05:01.546] INFO     (dml_agent) [66] Initalized
+[2025-04-11 03:05:01.546] INFO     (parsl.dataflow.dflow) Standard out for task 42 will not be redirected.
+[2025-04-11 03:05:01.547] INFO     (parsl.dataflow.dflow) Task 66 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.547] INFO     (parsl.dataflow.dflow) Standard error for task 42 will not be redirected.
+[2025-04-11 03:05:01.547] INFO     (dml_agent) [67] Initalized
+[2025-04-11 03:05:01.547] INFO     (parsl.dataflow.dflow) Parsl task 43 try 0 launched on executor HighThroughputExecutor with executor id 44
+[2025-04-11 03:05:01.547] INFO     (parsl.dataflow.dflow) Task 67 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.548] INFO     (parsl.dataflow.dflow) Standard out for task 43 will not be redirected.
+[2025-04-11 03:05:01.548] INFO     (dml_agent) [68] Initalized
+[2025-04-11 03:05:01.548] INFO     (parsl.dataflow.dflow) Standard error for task 43 will not be redirected.
+[2025-04-11 03:05:01.548] INFO     (parsl.dataflow.dflow) Task 68 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.548] INFO     (parsl.dataflow.dflow) Parsl task 44 try 0 launched on executor HighThroughputExecutor with executor id 45
+[2025-04-11 03:05:01.548] INFO     (dml_agent) [69] Initalized
+[2025-04-11 03:05:01.548] INFO     (parsl.dataflow.dflow) Standard out for task 44 will not be redirected.
+[2025-04-11 03:05:01.548] INFO     (parsl.dataflow.dflow) Task 69 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.548] INFO     (parsl.dataflow.dflow) Standard error for task 44 will not be redirected.
+[2025-04-11 03:05:01.548] INFO     (dml_agent) [70] Initalized
+[2025-04-11 03:05:01.549] INFO     (parsl.dataflow.dflow) Parsl task 45 try 0 launched on executor HighThroughputExecutor with executor id 46
+[2025-04-11 03:05:01.549] INFO     (parsl.dataflow.dflow) Task 70 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.549] INFO     (parsl.dataflow.dflow) Standard out for task 45 will not be redirected.
+[2025-04-11 03:05:01.549] INFO     (dml_agent) [71] Initalized
+[2025-04-11 03:05:01.549] INFO     (parsl.dataflow.dflow) Standard error for task 45 will not be redirected.
+[2025-04-11 03:05:01.549] INFO     (parsl.dataflow.dflow) Task 71 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.549] INFO     (parsl.dataflow.dflow) Parsl task 46 try 0 launched on executor HighThroughputExecutor with executor id 47
+[2025-04-11 03:05:01.549] INFO     (dml_agent) [72] Initalized
+[2025-04-11 03:05:01.549] INFO     (parsl.dataflow.dflow) Standard out for task 46 will not be redirected.
+[2025-04-11 03:05:01.549] INFO     (parsl.dataflow.dflow) Task 72 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.550] INFO     (parsl.dataflow.dflow) Standard error for task 46 will not be redirected.
+[2025-04-11 03:05:01.550] INFO     (dml_agent) [73] Initalized
+[2025-04-11 03:05:01.550] INFO     (parsl.dataflow.dflow) Parsl task 47 try 0 launched on executor HighThroughputExecutor with executor id 48
+[2025-04-11 03:05:01.550] INFO     (parsl.dataflow.dflow) Task 73 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.550] INFO     (parsl.dataflow.dflow) Standard out for task 47 will not be redirected.
+[2025-04-11 03:05:01.550] INFO     (dml_agent) [74] Initalized
+[2025-04-11 03:05:01.550] INFO     (parsl.dataflow.dflow) Standard error for task 47 will not be redirected.
+[2025-04-11 03:05:01.550] INFO     (parsl.dataflow.dflow) Task 74 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.550] INFO     (parsl.dataflow.dflow) Parsl task 48 try 0 launched on executor HighThroughputExecutor with executor id 49
+[2025-04-11 03:05:01.550] INFO     (dml_agent) [75] Initalized
+[2025-04-11 03:05:01.550] INFO     (parsl.dataflow.dflow) Standard out for task 48 will not be redirected.
+[2025-04-11 03:05:01.551] INFO     (parsl.dataflow.dflow) Task 75 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.551] INFO     (parsl.dataflow.dflow) Standard error for task 48 will not be redirected.
+[2025-04-11 03:05:01.551] INFO     (dml_agent) [76] Initalized
+[2025-04-11 03:05:01.551] INFO     (parsl.dataflow.dflow) Parsl task 49 try 0 launched on executor HighThroughputExecutor with executor id 50
+[2025-04-11 03:05:01.551] INFO     (parsl.dataflow.dflow) Task 76 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.551] INFO     (parsl.dataflow.dflow) Standard out for task 49 will not be redirected.
+[2025-04-11 03:05:01.551] INFO     (dml_agent) [77] Initalized
+[2025-04-11 03:05:01.551] INFO     (parsl.dataflow.dflow) Standard error for task 49 will not be redirected.
+[2025-04-11 03:05:01.551] INFO     (parsl.dataflow.dflow) Task 77 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.552] INFO     (parsl.dataflow.dflow) Parsl task 50 try 0 launched on executor HighThroughputExecutor with executor id 51
+[2025-04-11 03:05:01.552] INFO     (dml_agent) [78] Initalized
+[2025-04-11 03:05:01.552] INFO     (parsl.dataflow.dflow) Standard out for task 50 will not be redirected.
+[2025-04-11 03:05:01.552] INFO     (parsl.dataflow.dflow) Task 78 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.552] INFO     (parsl.dataflow.dflow) Standard error for task 50 will not be redirected.
+[2025-04-11 03:05:01.552] INFO     (dml_agent) [79] Initalized
+[2025-04-11 03:05:01.552] INFO     (parsl.dataflow.dflow) Parsl task 51 try 0 launched on executor HighThroughputExecutor with executor id 52
+[2025-04-11 03:05:01.552] INFO     (parsl.dataflow.dflow) Task 79 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.552] INFO     (parsl.dataflow.dflow) Standard out for task 51 will not be redirected.
+[2025-04-11 03:05:01.552] INFO     (dml_agent) [80] Initalized
+[2025-04-11 03:05:01.552] INFO     (parsl.dataflow.dflow) Standard error for task 51 will not be redirected.
+[2025-04-11 03:05:01.553] INFO     (parsl.dataflow.dflow) Task 80 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.553] INFO     (parsl.dataflow.dflow) Parsl task 52 try 0 launched on executor HighThroughputExecutor with executor id 53
+[2025-04-11 03:05:01.553] INFO     (dml_agent) [81] Initalized
+[2025-04-11 03:05:01.553] INFO     (parsl.dataflow.dflow) Standard out for task 52 will not be redirected.
+[2025-04-11 03:05:01.553] INFO     (parsl.dataflow.dflow) Task 81 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.553] INFO     (parsl.dataflow.dflow) Standard error for task 52 will not be redirected.
+[2025-04-11 03:05:01.553] INFO     (dml_agent) [82] Initalized
+[2025-04-11 03:05:01.553] INFO     (parsl.dataflow.dflow) Parsl task 53 try 0 launched on executor HighThroughputExecutor with executor id 54
+[2025-04-11 03:05:01.553] INFO     (parsl.dataflow.dflow) Task 82 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.553] INFO     (parsl.dataflow.dflow) Standard out for task 53 will not be redirected.
+[2025-04-11 03:05:01.554] INFO     (dml_agent) [83] Initalized
+[2025-04-11 03:05:01.554] INFO     (parsl.dataflow.dflow) Standard error for task 53 will not be redirected.
+[2025-04-11 03:05:01.554] INFO     (parsl.dataflow.dflow) Task 83 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.554] INFO     (parsl.dataflow.dflow) Parsl task 54 try 0 launched on executor HighThroughputExecutor with executor id 55
+[2025-04-11 03:05:01.554] INFO     (dml_agent) [84] Initalized
+[2025-04-11 03:05:01.554] INFO     (parsl.dataflow.dflow) Standard out for task 54 will not be redirected.
+[2025-04-11 03:05:01.554] INFO     (parsl.dataflow.dflow) Task 84 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.554] INFO     (parsl.dataflow.dflow) Standard error for task 54 will not be redirected.
+[2025-04-11 03:05:01.554] INFO     (dml_agent) [85] Initalized
+[2025-04-11 03:05:01.555] INFO     (parsl.dataflow.dflow) Task 85 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.555] INFO     (parsl.dataflow.dflow) Parsl task 55 try 0 launched on executor HighThroughputExecutor with executor id 56
+[2025-04-11 03:05:01.555] INFO     (dml_agent) [86] Initalized
+[2025-04-11 03:05:01.555] INFO     (parsl.dataflow.dflow) Standard out for task 55 will not be redirected.
+[2025-04-11 03:05:01.555] INFO     (parsl.dataflow.dflow) Task 86 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.555] INFO     (parsl.dataflow.dflow) Standard error for task 55 will not be redirected.
+[2025-04-11 03:05:01.555] INFO     (dml_agent) [87] Initalized
+[2025-04-11 03:05:01.555] INFO     (parsl.dataflow.dflow) Parsl task 56 try 0 launched on executor HighThroughputExecutor with executor id 57
+[2025-04-11 03:05:01.555] INFO     (parsl.dataflow.dflow) Task 87 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.555] INFO     (parsl.dataflow.dflow) Standard out for task 56 will not be redirected.
+[2025-04-11 03:05:01.556] INFO     (dml_agent) [88] Initalized
+[2025-04-11 03:05:01.556] INFO     (parsl.dataflow.dflow) Standard error for task 56 will not be redirected.
+[2025-04-11 03:05:01.556] INFO     (parsl.dataflow.dflow) Task 88 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.556] INFO     (parsl.dataflow.dflow) Parsl task 57 try 0 launched on executor HighThroughputExecutor with executor id 58
+[2025-04-11 03:05:01.556] INFO     (dml_agent) [89] Initalized
+[2025-04-11 03:05:01.556] INFO     (parsl.dataflow.dflow) Standard out for task 57 will not be redirected.
+[2025-04-11 03:05:01.556] INFO     (parsl.dataflow.dflow) Task 89 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.556] INFO     (parsl.dataflow.dflow) Standard error for task 57 will not be redirected.
+[2025-04-11 03:05:01.556] INFO     (dml_agent) [90] Initalized
+[2025-04-11 03:05:01.556] INFO     (parsl.dataflow.dflow) Parsl task 58 try 0 launched on executor HighThroughputExecutor with executor id 59
+[2025-04-11 03:05:01.557] INFO     (parsl.dataflow.dflow) Task 90 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.557] INFO     (parsl.dataflow.dflow) Standard out for task 58 will not be redirected.
+[2025-04-11 03:05:01.557] INFO     (dml_agent) [91] Initalized
+[2025-04-11 03:05:01.557] INFO     (parsl.dataflow.dflow) Standard error for task 58 will not be redirected.
+[2025-04-11 03:05:01.557] INFO     (parsl.dataflow.dflow) Task 91 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.557] INFO     (parsl.dataflow.dflow) Parsl task 59 try 0 launched on executor HighThroughputExecutor with executor id 60
+[2025-04-11 03:05:01.557] INFO     (dml_agent) [92] Initalized
+[2025-04-11 03:05:01.557] INFO     (parsl.dataflow.dflow) Standard out for task 59 will not be redirected.
+[2025-04-11 03:05:01.557] INFO     (parsl.dataflow.dflow) Task 92 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.557] INFO     (parsl.dataflow.dflow) Standard error for task 59 will not be redirected.
+[2025-04-11 03:05:01.557] INFO     (dml_agent) [93] Initalized
+[2025-04-11 03:05:01.558] INFO     (parsl.dataflow.dflow) Parsl task 60 try 0 launched on executor HighThroughputExecutor with executor id 61
+[2025-04-11 03:05:01.558] INFO     (parsl.dataflow.dflow) Task 93 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.558] INFO     (parsl.dataflow.dflow) Standard out for task 60 will not be redirected.
+[2025-04-11 03:05:01.558] INFO     (dml_agent) [94] Initalized
+[2025-04-11 03:05:01.558] INFO     (parsl.dataflow.dflow) Standard error for task 60 will not be redirected.
+[2025-04-11 03:05:01.558] INFO     (parsl.dataflow.dflow) Task 94 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.558] INFO     (parsl.dataflow.dflow) Parsl task 61 try 0 launched on executor HighThroughputExecutor with executor id 62
+[2025-04-11 03:05:01.558] INFO     (dml_agent) [95] Initalized
+[2025-04-11 03:05:01.559] INFO     (parsl.dataflow.dflow) Standard out for task 61 will not be redirected.
+[2025-04-11 03:05:01.559] INFO     (parsl.dataflow.dflow) Task 95 submitted for App _run_agent_on_worker, not waiting on any dependency
+[2025-04-11 03:05:01.559] INFO     (parsl.dataflow.dflow) Standard error for task 61 will not be redirected.
+[2025-04-11 03:05:01.559] INFO     (__main__) Blocking on tracker
+[2025-04-11 03:05:01.559] INFO     (parsl.dataflow.dflow) Parsl task 62 try 0 launched on executor HighThroughputExecutor with executor id 63
+[2025-04-11 03:05:01.559] INFO     (parsl.dataflow.dflow) Standard out for task 62 will not be redirected.
+[2025-04-11 03:05:01.559] INFO     (parsl.dataflow.dflow) Standard error for task 62 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Parsl task 63 try 0 launched on executor HighThroughputExecutor with executor id 64
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard out for task 63 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard error for task 63 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Parsl task 64 try 0 launched on executor HighThroughputExecutor with executor id 65
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard out for task 64 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard error for task 64 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Parsl task 65 try 0 launched on executor HighThroughputExecutor with executor id 66
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard out for task 65 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard error for task 65 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Parsl task 66 try 0 launched on executor HighThroughputExecutor with executor id 67
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard out for task 66 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard error for task 66 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Parsl task 67 try 0 launched on executor HighThroughputExecutor with executor id 68
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard out for task 67 will not be redirected.
+[2025-04-11 03:05:01.560] INFO     (parsl.dataflow.dflow) Standard error for task 67 will not be redirected.
+[2025-04-11 03:05:01.561] INFO     (parsl.dataflow.dflow) Parsl task 68 try 0 launched on executor HighThroughputExecutor with executor id 69
+[2025-04-11 03:05:01.561] INFO     (parsl.dataflow.dflow) Standard out for task 68 will not be redirected.
+[2025-04-11 03:05:01.561] INFO     (parsl.dataflow.dflow) Standard error for task 68 will not be redirected.
+[2025-04-11 03:05:01.561] INFO     (parsl.dataflow.dflow) Parsl task 69 try 0 launched on executor HighThroughputExecutor with executor id 70
+[2025-04-11 03:05:01.561] INFO     (parsl.dataflow.dflow) Standard out for task 69 will not be redirected.
+[2025-04-11 03:05:01.561] INFO     (parsl.dataflow.dflow) Standard error for task 69 will not be redirected.
+[2025-04-11 03:05:01.561] INFO     (parsl.dataflow.dflow) Parsl task 70 try 0 launched on executor HighThroughputExecutor with executor id 71
+[2025-04-11 03:05:01.562] INFO     (parsl.dataflow.dflow) Standard out for task 70 will not be redirected.
+[2025-04-11 03:05:01.562] INFO     (parsl.dataflow.dflow) Standard error for task 70 will not be redirected.
+[2025-04-11 03:05:01.562] INFO     (parsl.dataflow.dflow) Parsl task 71 try 0 launched on executor HighThroughputExecutor with executor id 72
+[2025-04-11 03:05:01.562] INFO     (parsl.dataflow.dflow) Standard out for task 71 will not be redirected.
+[2025-04-11 03:05:01.562] INFO     (parsl.dataflow.dflow) Standard error for task 71 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Parsl task 72 try 0 launched on executor HighThroughputExecutor with executor id 73
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard out for task 72 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard error for task 72 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Parsl task 73 try 0 launched on executor HighThroughputExecutor with executor id 74
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard out for task 73 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard error for task 73 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Parsl task 74 try 0 launched on executor HighThroughputExecutor with executor id 75
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard out for task 74 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard error for task 74 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Parsl task 75 try 0 launched on executor HighThroughputExecutor with executor id 76
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard out for task 75 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard error for task 75 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Parsl task 76 try 0 launched on executor HighThroughputExecutor with executor id 77
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard out for task 76 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard error for task 76 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Parsl task 77 try 0 launched on executor HighThroughputExecutor with executor id 78
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard out for task 77 will not be redirected.
+[2025-04-11 03:05:01.563] INFO     (parsl.dataflow.dflow) Standard error for task 77 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Parsl task 78 try 0 launched on executor HighThroughputExecutor with executor id 79
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard out for task 78 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard error for task 78 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Parsl task 79 try 0 launched on executor HighThroughputExecutor with executor id 80
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard out for task 79 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard error for task 79 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Parsl task 80 try 0 launched on executor HighThroughputExecutor with executor id 81
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard out for task 80 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard error for task 80 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Parsl task 81 try 0 launched on executor HighThroughputExecutor with executor id 82
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard out for task 81 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard error for task 81 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Parsl task 82 try 0 launched on executor HighThroughputExecutor with executor id 83
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard out for task 82 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard error for task 82 will not be redirected.
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Parsl task 83 try 0 launched on executor HighThroughputExecutor with executor id 84
+[2025-04-11 03:05:01.564] INFO     (parsl.dataflow.dflow) Standard out for task 83 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard error for task 83 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Parsl task 84 try 0 launched on executor HighThroughputExecutor with executor id 85
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard out for task 84 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard error for task 84 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Parsl task 85 try 0 launched on executor HighThroughputExecutor with executor id 86
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard out for task 85 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard error for task 85 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Parsl task 86 try 0 launched on executor HighThroughputExecutor with executor id 87
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard out for task 86 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard error for task 86 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Parsl task 87 try 0 launched on executor HighThroughputExecutor with executor id 88
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard out for task 87 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard error for task 87 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Parsl task 88 try 0 launched on executor HighThroughputExecutor with executor id 89
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard out for task 88 will not be redirected.
+[2025-04-11 03:05:01.565] INFO     (parsl.dataflow.dflow) Standard error for task 88 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Parsl task 89 try 0 launched on executor HighThroughputExecutor with executor id 90
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard out for task 89 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard error for task 89 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Parsl task 90 try 0 launched on executor HighThroughputExecutor with executor id 91
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard out for task 90 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard error for task 90 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Parsl task 91 try 0 launched on executor HighThroughputExecutor with executor id 92
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard out for task 91 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard error for task 91 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Parsl task 92 try 0 launched on executor HighThroughputExecutor with executor id 93
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard out for task 92 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard error for task 92 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Parsl task 93 try 0 launched on executor HighThroughputExecutor with executor id 94
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard out for task 93 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard error for task 93 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Parsl task 94 try 0 launched on executor HighThroughputExecutor with executor id 95
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard out for task 94 will not be redirected.
+[2025-04-11 03:05:01.566] INFO     (parsl.dataflow.dflow) Standard error for task 94 will not be redirected.
+[2025-04-11 03:05:01.567] INFO     (parsl.dataflow.dflow) Parsl task 95 try 0 launched on executor HighThroughputExecutor with executor id 96
+[2025-04-11 03:05:01.567] INFO     (parsl.dataflow.dflow) Standard out for task 95 will not be redirected.
+[2025-04-11 03:05:01.567] INFO     (parsl.dataflow.dflow) Standard error for task 95 will not be redirected.
+[2025-04-11 03:05:05.772] INFO     (parsl.executors.status_handling) Scaling out by 1 blocks
+[2025-04-11 03:05:05.773] INFO     (parsl.executors.status_handling) Allocated block ID 0
