@@ -50,7 +50,7 @@ np.savetxt("topology/topo_4.txt", topology, fmt="%d")
 
 # Powerlaw cluster graph generation for Nodes=6, 12, 24, 48, 96, 192
 
-for node in [6, 12, 24, 48, 96, 192, 384]:
+for node in [6, 12, 24, 48, 96, 192, 384, 768, 1536]:
 
     G = nx.powerlaw_cluster_graph(node, 2, p=0.01, seed=0)
     # randomly assign edge weights (network connection probabilities)

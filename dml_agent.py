@@ -85,10 +85,12 @@ class DMLAgent(Behavior):
         self.tracker = tracker
         self.model_size = model_size
         logger.info(f"[{self.node_id}] Initalized")
+        logger.info(f"[{self.node_id}] {rounds=}")
+        logger.info(f"[{self.node_id}] {model_size=}")
 
     def on_setup(self):
         init_logging(logging.INFO, logfile=f"{self.logpath}/agent.{self.node_id}.log", color=False, extra=True)
-        logger.info(f"[{self.node_id}] Setup: Initializing model")
+        logger.info(f"[{self.node_id}] Setup: Initializing model:{self.model_size}")
         self.init_model()
 
     def init_model(self):
@@ -116,9 +118,8 @@ class DMLAgent(Behavior):
             train_data=loader,
             device=self.device
         )
-        # self.model_state_size = sys.getsizeof(pickle.dumps(model.state_dict()))
         self.model_state_size = calculate_model_size(model)
-        logger.info(f"[{self.node_id}] Initalized model")
+        logger.info(f"[{self.node_id}] Initalized model of size {self.model_state_size:.2f} MB")
 
     def train(self) -> float:
         # Local training phase
@@ -162,13 +163,8 @@ class DMLAgent(Behavior):
 
     @action
     def receive_state(self, state:int, from_id: int) -> None:
-        # logger.info(f"[{self.node_id}] Received state {from_id=}")
-        if from_id == "1337":
-            logger.info("Got messsage from tracker, shutting down")
-            self.shutdown()
-        else:
-            self.inbox.append(state)
-            return
+        self.inbox.append(state)
+        return
 
     @loop
     def training_loop(self, shutdown: threading.Event) -> None:
@@ -193,9 +189,7 @@ class DMLAgent(Behavior):
 
         # Report to tracker that the agent is done
         self.tracker.action('report_done', self.node_id).result()
-        self.tracker.action('block_until_done').result()
         logger.info(f"[{self.node_id}] Exiting. Total active time: {t}s")
-        shutdown.set()
 
 
 class Tracker(Behavior):
@@ -206,9 +200,11 @@ class Tracker(Behavior):
         self.done_event = threading.Event()
 
     @action
-    def report_done(self, agent_id: int):
+    def report_done(self, agent_id: int) -> int:
         logger.info(f"[Tracker] {agent_id} reports done")
         self.done_count += 1
+        return self.done_count
+        
 
     @action
     def block_until_done(self):

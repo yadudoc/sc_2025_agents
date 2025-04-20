@@ -27,6 +27,14 @@ from aeris.exchange.redis import RedisExchange
 from aeris.launcher.executor import ExecutorLauncher
 from aeris.launcher.thread import ThreadLauncher
 from aeris.logging import init_logging
+from proxystore.connectors.endpoint import EndpointConnector
+from proxystore.store import Store
+from proxystore.store.executor import ProxyAlways
+from proxystore.ex.connectors.dim.zmq import ZeroMQConnector
+
+from aeris.exchange.hybrid import HybridExchange
+from aeris.exchange.proxystore import ProxyStoreExchange
+from aeris.exchange.redis import RedisExchange
 from concurrent.futures import ThreadPoolExecutor
 from parsl.concurrent import ParslPoolExecutor
 
@@ -42,7 +50,7 @@ import networkx as nx
 import intel_extension_for_pytorch as ipex
 from decentralized import CNN, Node
 from parsl_config import PARSL_CONFIGS
-from dml_agent import DMLAgent
+from dml_agent import DMLAgent, Tracker
 
 
 logger = logging.getLogger(__name__)
@@ -64,7 +72,24 @@ def get_adj_dict(topo_file: str) -> dict[list]:
     return adj_dict
 
 
-def spawn_agents(adj_dict: dict[list], exchange, launcher, logpath) -> None:
+def spawn_tracker(exchange, launcher, agent_count):
+
+    node_id = exchange.create_agent()
+    node_handle: UnboundRemoteHandle[DMLAgent] = exchange.create_handle(node_id)
+    node_behavior = Tracker(agent_count)
+    agent_handle = launcher.launch(
+        node_behavior,
+        exchange,
+        agent_id=node_id,
+    )
+    return node_handle
+
+def spawn_agents(adj_dict: dict[list], exchange, launcher, logpath,
+                 tracker_handle: Handle[Tracker]=None,
+                 rounds:int=4,
+                 model_size:str = "small",
+                 epochs_per_round:int=1,
+                 ) -> None:
 
     nodes = {}
 
@@ -85,7 +110,12 @@ def spawn_agents(adj_dict: dict[list], exchange, launcher, logpath) -> None:
 
         node_behavior = DMLAgent(node_id=node,
                                  neighbors=HandleList(neighbor_handles),
-                                 logpath=logpath)
+                                 tracker=tracker_handle,
+                                 logpath=logpath,
+                                 rounds=rounds,
+                                 model_size=model_size,
+                                 epochs_per_round=1,
+                                 )
 
         agent_handle = launcher.launch(
             node_behavior,
@@ -96,11 +126,8 @@ def spawn_agents(adj_dict: dict[list], exchange, launcher, logpath) -> None:
         nodes[node]['agent_handle'] = agent_handle
 
     logger.info("Finished launching agents")
-    for node in nodes:
-        agent_id = nodes[node]['node_id']
-        print(f"Waiting for {agent_id=}")
-        launcher.wait(agent_id)
-    logger.info("All agents finished")
+
+    return [nodes[node]['node_handle'] for node in nodes]
 
 
 if __name__ == "__main__":
@@ -116,31 +143,86 @@ if __name__ == "__main__":
                         help="redis hostname")
     parser.add_argument('--redis_port', default=6789,
                         help="redis port")
+    parser.add_argument('--rounds', default=5,
+                        help="Number of rounds to run")
+    parser.add_argument('--model_size', default='small',
+                        help="Model size: small/medium/large/largex2")
+
     args = parser.parse_args()
 
-
-    adj_dict = get_adj_dict(args.topo_file)
-
+    thread_launcher = ExecutorLauncher(ThreadPoolExecutor(), close_exchange=False)
 
     print(f"Running in environment:{args.environment}")
+
     if args.environment == 'threads':
         exchange = ThreadExchange()
-        executor = ThreadPoolExecutor()
-        launcher = ExecutorLauncher(executor)
+        launcher = thread_launcher
+
     elif args.environment == 'parsl-gpu':
         exchange = RedisExchange(hostname=args.redis_hostname, port=args.redis_port)
 
         config = PARSL_CONFIGS['htex-aurora-gpu'](run_dir=os.getcwd(), workers_per_node=12)
         executor = ParslPoolExecutor(config)
         launcher = ExecutorLauncher(executor, close_exchange=True)
+
     elif args.environment == 'parsl-cpu':
         exchange = RedisExchange(hostname=args.redis_hostname, port=args.redis_port)
-
         config = PARSL_CONFIGS['htex-aurora-cpu'](run_dir=os.getcwd(), workers_per_node=12)
         executor = ParslPoolExecutor(config)
         launcher = ExecutorLauncher(executor, close_exchange=True)
 
-    run_id = len(os.listdir(args.log_dir))
-    logpath = f"agent_logs/{run_id:03}"
-    os.makedirs(logpath, exist_ok=True)
-    spawn_agents(adj_dict, exchange, launcher, logpath)
+    elif args.environment == 'parsl-gpu-proxy':
+        connector = ZeroMQConnector(25780, interface='hsn0', timeout=1)
+        store = Store(
+            'exchange',
+            connector,
+            cache_size=0,
+            register=True,
+        )
+        redis_exchange = RedisExchange(hostname=args.redis_hostname, port=args.redis_port)
+        exchange = ProxyStoreExchange(
+            redis_exchange,
+            store,
+            should_proxy=ProxyAlways(),
+            resolve_async=True, # Modified for experiments
+        )
+
+        config = PARSL_CONFIGS['htex-aurora-gpu'](run_dir=os.getcwd(), workers_per_node=12)
+        executor = ParslPoolExecutor(config)
+        launcher = ExecutorLauncher(executor, close_exchange=True)
+
+    else:
+        raise ValueError(f"{args.environment} is not supported")
+
+    if args.log_dir == "agent_logs":
+        run_id = len(os.listdir(args.log_dir))
+        logpath = f"agent_logs/{run_id:03}"
+    else:
+        os.makedirs(args.log_dir, exist_ok=True)
+        logpath = args.log_dir
+
+    adj_dict = get_adj_dict(args.topo_file)
+
+    agent_count = len(adj_dict)
+    print("Agent count: ", agent_count)
+
+    # Tracker agent must be launched with the thread_launcher so as to run
+    # on the lead node and not on the limited GPU attached worker slots
+    tracker_handle = spawn_tracker(exchange, thread_launcher, agent_count)
+
+    agent_handles = spawn_agents(
+        adj_dict, exchange, launcher, logpath,
+        tracker_handle=tracker_handle,
+        model_size=args.model_size,
+        rounds=int(args.rounds),
+    )
+
+    thread_launcher.wait(tracker_handle.agent_id)
+
+
+    for agent_handle in agent_handles:
+        agent_client = agent_handle.bind_as_client()
+        agent_client.shutdown()
+        agent_client.close()
+
+    print("Exiting!!!")

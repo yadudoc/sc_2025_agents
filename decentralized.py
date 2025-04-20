@@ -8,15 +8,57 @@ import numpy as np
 import networkx as nx
 import intel_extension_for_pytorch as ipex
 
+def calculate_model_size(model: nn.Module) -> float:
+    """ From https://stackoverflow.com/questions/71851474/how-to-find-the-size-of-a-deep-learning-model
+    """
+    param_size = 0
+    buffer_size = 0
+    for param in model.parameters():
+        param_size += param.nelement() * param.element_size()
+
+    for buffer in model.buffers():
+        buffer_size += buffer.nelement() * buffer.element_size()
+
+    size_mb = (param_size + buffer_size) / 1024**2
+    return size_mb
+
+
 class CNN(nn.Module):
-    def __init__(self):
+    def __init__(self, model_size:str="small"):
         super(CNN, self).__init__()
-        self.conv1 = nn.Conv2d(1, 32, 3, 1)
-        self.conv2 = nn.Conv2d(32, 64, 3, 1)
         self.dropout1 = nn.Dropout(0.25)
         self.dropout2 = nn.Dropout(0.5)
-        self.fc1 = nn.Linear(9216, 128)
-        self.fc2 = nn.Linear(128, 10)
+        self.model_size = model_size
+
+        # Note: These model size are tweaked to get match previous
+        # model sizes used for experiments and do not match realistic
+        # parameters for real use-cases
+        if self.model_size == "small":
+            self.conv1 = nn.Conv2d(1, 32, 3, 1)
+            self.conv2 = nn.Conv2d(32, 64, 3, 1)
+            self.fc1 = nn.Linear(9216, 32)
+            self.fc2 = nn.Linear(32, 10)
+
+        elif self.model_size == "medium":
+            self.conv1 = nn.Conv2d(1, 64, 3, 1)
+            self.conv2 = nn.Conv2d(64, 64, 3, 1)
+            self.fc1 = nn.Linear(9216, 128)
+            self.fc2 = nn.Linear(128, 320)
+
+        elif self.model_size == "large":
+            self.conv1 = nn.Conv2d(1, 128, 3, 1)
+            self.conv2 = nn.Conv2d(128, 64, 3, 1)
+            self.fc1 = nn.Linear(9216, 256)
+            self.fc2 = nn.Linear(256, 464)
+
+        elif self.model_size == "largex2":
+            self.conv1 = nn.Conv2d(1, 256, 3, 1)
+            self.conv2 = nn.Conv2d(256, 64, 3, 1)
+            self.fc1 = nn.Linear(9216, 512)
+            self.fc2 = nn.Linear(512, 308)
+
+        else:
+            raise ValueError(f"Model size: {model_size} is not supported")
 
     def forward(self, x):
         x = self.conv1(x)
@@ -52,14 +94,13 @@ class Node:
                 loss.backward()
                 self.optimizer.step()
 
-    def average_with_neighbors(self, neighbor_nodes):
+    def average_with_neighbors(self, neighbor_state_dicts):
         # Average model parameters with neighboring nodes
         averaged_state_dict = copy.deepcopy(self.model.state_dict())
         neighbor_count = 1  # Include self in count
 
         # Collect and average parameters from neighbors
-        for neighbor_state_dict in neighbor_nodes:
-
+        for neighbor_state_dict in neighbor_state_dicts:
             for key in averaged_state_dict.keys():
                 averaged_state_dict[key] += neighbor_state_dict[key]
             neighbor_count += 1
@@ -72,11 +113,13 @@ class Node:
         self.model.load_state_dict(averaged_state_dict)
 
 class DecentralizedLearning:
-    def __init__(self, num_nodes, topology='ring'):
+    def __init__(self, num_nodes, model_size:str='small', rounds:int=1):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.num_nodes = num_nodes
         self.nodes = {}
         self.topology = topology
+        self.model_size = model_size
+        self.rounds = rounds
 
     def create_network_topology(self):
         if self.topology == 'ring':
@@ -115,10 +158,10 @@ class DecentralizedLearning:
         node_data = random_split(dataset, node_sizes)
 
         # Create dataloaders for each node
-        node_loaders = [DataLoader(ds, batch_size=64, shuffle=True) for ds in node_data]
+        node_loader = DataLoader(dataset, batch_size=64, shuffle=True)
 
         # Initialize global model architecture (each node will get a copy)
-        model = CNN().to(self.device)
+        model = CNN(model_size).to(self.device)
 
         # Create network topology
         topology = self.create_network_topology()
@@ -157,5 +200,13 @@ def main():
     local_epochs = 1
     dl_system.train(num_rounds, local_epochs)
 
+def test_model_sizes():
+
+    for model_size in ["small", "medium", "large", "largex2"]:
+        cnn = CNN(model_size=model_size)
+        actual_size = calculate_model_size(cnn)
+        print(f"{model_size=} {actual_size=}MB")
+
 if __name__ == "__main__":
-    main()
+    test_model_sizes()
+    #main()
